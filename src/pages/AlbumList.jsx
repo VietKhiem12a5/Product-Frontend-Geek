@@ -1,0 +1,1 @@
+export default function AlbumList() { return <div>Album List Page</div>; }
