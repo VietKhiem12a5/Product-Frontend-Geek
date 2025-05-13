@@ -1,4 +1,4 @@
-# Product Frontend Skeleton
+# Product Frontend
 
 ## Cài đặt
 ```bash
