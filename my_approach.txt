@@ -1,0 +1,41 @@
+Cách tiếp cận và sử dụng thư viện/công cụ trong Product Frontend:
+
+1. React + Vite:
+   - Sử dụng React để xây dựng giao diện component-based, đảm bảo tái sử dụng và dễ bảo trì.
+   - Vite làm công cụ build, cung cấp hot module replacement (HMR) và thời gian build nhanh, tối ưu trải nghiệm phát triển.
+
+2. Ant Design:
+   - Chọn Ant Design làm thư viện UI để tạo giao diện responsive, đẹp mắt, và nhất quán.
+   - Sử dụng các component như Table, Card, Spin, Image, Breadcrumb để hiển thị dữ liệu và trạng thái tải.
+   - Tận dụng Image.PreviewGroup cho chức năng preview ảnh và thay đổi kích thước ảnh.
+
+3. React Query:
+   - Quản lý API calls (fetch users, albums, photos) với caching, retry, và loading state tự động.
+   - Sử dụng thuộc tính `enabled` trong useQuery để tránh gọi API không cần thiết (ví dụ: chỉ fetch user khi có userId).
+   - Đảm bảo hiệu suất bằng cách lưu trữ dữ liệu tạm thời, giảm số lượng request.
+
+4. Axios:
+   - Sử dụng Axios để gửi HTTP requests đến JSONPlaceholder API, với cú pháp đơn giản và xử lý lỗi bằng try-catch.
+   - Tách logic API vào file `/api/index.js` để dễ bảo trì và test.
+
+5. React Router DOM:
+   - Triển khai điều hướng giữa các trang (/albums, /albums/:id, /users, /users/:id).
+   - Đồng bộ phân trang với URL qua useSearchParams, hỗ trợ current và pageSize.
+   - Sử dụng Breadcrumb và nút "Quay lại" để cải thiện UX.
+
+6. UI-Avatars:
+   - Tạo avatar động dựa trên tên user với thông số size=32, background=random, color=ffffff, bold=true.
+   - Tích hợp vào các bảng và trang chi tiết với thuộc tính alt đúng yêu cầu.
+
+7. ErrorBoundary:
+   - Triển khai ErrorBoundary để bắt lỗi giao diện, hiển thị thông báo thân thiện với Ant Design Alert.
+   - Cung cấp nút "Tải lại" và "Quay lại" để người dùng xử lý lỗi.
+
+8. @ant-design/icons:
+   - Cung cấp các icon như EyeOutlined, ArrowLeftOutlined, UserOutlined, UnorderedListOutlined.
+   - Sử dụng trong nút hành động (Show), breadcrumb, và nút quay lại để tăng tính trực quan.
+
+9. @tanstack/react-query:
+   - Quản lý API calls (fetch users, albums, photos) với caching, retry, và loading state tự động.
+   - Sử dụng thuộc tính enabled trong useQuery để tránh gọi API không cần thiết (ví dụ: chỉ fetch user khi có userId).
+   - Đảm bảo hiệu suất bằng cách lưu trữ dữ liệu tạm thời, giảm số lượng request.
