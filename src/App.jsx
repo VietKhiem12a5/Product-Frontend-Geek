@@ -28,7 +28,6 @@ const App = () => {
   {
     key: '/albums',
     label: 'Albums',
-    // Thêm icon là một empty span, chúng ta sẽ dùng CSS để style
     icon: <span className="custom-album-icon" />,
     onClick: () => navigate('/albums'),
   },

@@ -7,7 +7,7 @@ export const fetchAlbums = async (page, limit = 10) => {
     const response = await axios.get(`${API_URL}/albums`, {
       params: { _page: page, _limit: limit },
     });
-    const total = parseInt(response.headers['x-total-count']) || 100; // Tổng số bản ghi
+    const total = parseInt(response.headers['x-total-count']) || 100; 
     return { data: response.data, total };
   } catch (error) {
     console.error('Error fetching albums:', error);

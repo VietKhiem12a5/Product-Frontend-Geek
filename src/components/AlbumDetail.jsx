@@ -44,7 +44,7 @@ const AlbumDetail = () => {
   return (
      <Spin spinning={albumLoading || userLoading || photosLoading} style={{background: 'transparent !important'}}>
       <div style={{ padding: 24}}>
-        {/* Breadcrumb + Tiêu đề */}
+
         <Breadcrumb style={{ marginBottom: 16, fontSize:20 }}>
         <UnorderedListOutlined/>
           <Breadcrumb.Item>
@@ -68,14 +68,11 @@ const AlbumDetail = () => {
           <Title level={3} style={{ margin: 0 }}>Show Album</Title>
         </Space>
 
-
-        {/* Nội dung chính trong Card */}
         <Card style={{ borderRadius: 8, marginBottom: 0, backgroundColor: '#fff' }}>
-          {/* Avatar + User info */}
           {user && (
             <Space direction="vertical" size={0} style={{ marginBottom: 12 }}>
               <Link to={`/users/${user.id}`} style={{ display: 'flex', alignItems: 'center' }}>
-                <Avatar src={getAvatarUrl(user.name)} size={48} style={{ marginRight: 12 }} />
+                <Avatar src={getAvatarUrl(user.name)} size={48} style={{ marginRight: 12 }} alt={`${user.name}'s avatar`} />
                 <div>
                   <Text strong style={{ fontSize: 16, color: '#1677ff' }}>{user.name}</Text><br />
                 </div>
@@ -83,13 +80,8 @@ const AlbumDetail = () => {
               <a href={`mailto:${user.email}`} style={{ fontSize: 13, marginLeft:60 }}>{user.email}</a>
             </Space>
           )}
-
           <Divider style={{ marginTop: 12, marginBottom: 16 }} />
-
-          {/* Tiêu đề album */}
           <Title level={4} style={{ marginBottom: 24 }}>{album?.title}</Title>
-
-          {/* Ảnh theo grid */}
           <PreviewGroup>
             <Row gutter={[16, 16]}>
               {photos?.slice(0, visibleCount).map((photo) => (
@@ -99,7 +91,7 @@ const AlbumDetail = () => {
                     alt={photo.title}
                     preview={{ 
                       src: photo.url,
-                      visible: false, // Bỏ qua prop visible nếu không cần control
+                      visible: false, 
                     }}
                     style={{ width: '100%' }}
                   />
@@ -109,7 +101,6 @@ const AlbumDetail = () => {
             </Row>
           </PreviewGroup>
 
-          {/* Nút Load More */}
           {photos?.length > visibleCount && (
             <div style={{ textAlign: 'center', marginTop: 24 }}>
               <Button onClick={() => setVisibleCount((prev) => prev + 20)}>

@@ -68,7 +68,7 @@ const UserDetail = () => {
   return (
     <Spin spinning={userLoading || albumsLoading}>
       <div style={{ padding: 24 }}>
-        {/* Breadcrumb + Tiêu đề */}
+
         <Breadcrumb style={{ marginBottom: 16,fontSize: 20 }}>
         <UserOutlined />
           <Breadcrumb.Item>
@@ -94,13 +94,13 @@ const UserDetail = () => {
           </Title>
         </Space>
 
-        {/* Card chứa thông tin user */}
         <Card style={{ borderRadius: 8 }}>
           {user && (
             <>
               <Space size="middle" align="center" style={{ marginBottom: 12 }}>
                 <Avatar
                   src={getAvatarUrl(user.name)}
+                  alt={`${user.name}'s avatar`}
                   size={48}
                 />
                 <div>
@@ -108,11 +108,8 @@ const UserDetail = () => {
                   <a href={`mailto:${user.email}`}>{user.email}</a>
                 </div>
               </Space>
-
               <Divider />
-
               <Title level={4} style={{ marginBottom: 16 }}>Albums</Title>
-
               <Table
                 columns={columns}
                 dataSource={albums}

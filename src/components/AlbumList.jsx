@@ -76,9 +76,9 @@ const AlbumList = () => {
   if (!albums?.data) return [];
   return albums.data.map((album) => ({
     ...album,
-    userId: Math.floor((album.id - 1) / 10) + 1, // userId tăng sau mỗi 10 id
+    userId: Math.floor((album.id - 1) / 10) + 1, // Tính userId dựa trên album.id (giả định mỗi user có 10 albums)
   }));
-}, [albums]);
+  }, [albums]);
 
   return (
     <div className="content-container">
