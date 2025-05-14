@@ -4,7 +4,7 @@ Yêu cầu hệ thống
 ## Cài đặt
 Clone repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/VietKhiem12a5/Product-Frontend-Geek.git
 cd <repository-folder>
 ```
 Cài đặt dependencies:
